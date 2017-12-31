@@ -128,11 +128,11 @@ function q_embed(key, val) {
 function two_col_val(q_obj) {
 	var that = q_obj;
 	var j$ = jQuery.noConflict();
-	var qid = this.getQuestionInfo().QuestionID;
+	var qid = that.getQuestionInfo().QuestionID;
 	var text_in = j$("#" + qid).find("input:text");
 	var radio_in = j$("#" + qid).find("input:radio");
-	var text_q = this.question.runtime.Children["1"];
-	var radio_q = this.question.runtime.Children["2"]; 
+	var text_q = that.question.runtime.Children["1"];
+	var radio_q = that.question.runtime.Children["2"]; 
 	var arr_val = array_init(text_in.length, 0);
 
 	if(check_val(qid) == 1) {
