@@ -20,6 +20,8 @@ function two_col_val(q_obj) {
 
 	console.log(qid);
 	console.log(radio_in);	
+	
+	console.log(arr_val);
 
 	add_please(qid);
 
@@ -73,8 +75,9 @@ function two_col_val(q_obj) {
 		  j$(text_in[locs.choice -1]).val("");
 			
 		  console.log(ind, locs.ans, ind / locs.ans, Math.floor(ind / locs.ans), ind - locs.ans);
-		  console.log(arr_val);
+
 		  arr_val[Math.ceil((ind - locs.ans + 1)/2)] = 1;
+		  console.log(arr_val);
 		  check_arr(arr_val);
 		  
 		}).each(function (idx) {j$(this).data('index', idx)});
