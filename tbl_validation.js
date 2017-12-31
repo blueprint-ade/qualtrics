@@ -25,7 +25,7 @@ function two_col_val(q_obj) {
 
 	add_please(qid);
 
-	add_radio_click(qid, arr_val);
+	add_radio_click(qid, radio_q, arr_val);
 
 	add_text_input(qid, radio_q, arr_val);
 	
@@ -67,6 +67,7 @@ function two_col_val(q_obj) {
 		  
 		  var ind = j$(this).data("index");
 		  console.log(this.id);
+		  console.log("validation array: ", arr_val);
 		
 		  var locs = parse_id(this.id);
 		  console.log(locs);	
