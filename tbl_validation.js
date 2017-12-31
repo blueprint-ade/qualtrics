@@ -152,11 +152,3 @@ function two_col_val(q_obj) {
 	add_text_input(qid, radio_q);
 
 }
-
-});
-
-Qualtrics.SurveyEngine.addOnUnload(function()
-{
-	/*Place your JavaScript here to run when the page is unloaded*/
-
-});
