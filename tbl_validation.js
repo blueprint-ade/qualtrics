@@ -73,6 +73,7 @@ function two_col_val(q_obj) {
 		  j$(text_in[locs.choice -1]).val("");
 			
 		  console.log(ind, locs.ans, ind / locs.ans, Math.floor(ind / locs.ans), ind - locs.ans);
+		  console.log(arr_val);
 		  arr_val[Math.ceil((ind - locs.ans + 1)/2)] = 1;
 		  check_arr(arr_val);
 		  
