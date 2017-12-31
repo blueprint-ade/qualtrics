@@ -27,7 +27,7 @@ function add_please(qid) {
 	console.log("please added");
 }
 
-function add_radio_click(qid, radio_q) {
+function add_radio_click(qid, radio_q, arr_val) {
 	
 
     var text_in   = j$("#" + qid).find("input:text");
@@ -54,7 +54,7 @@ function add_radio_click(qid, radio_q) {
 	
 }
 
-function add_text_input(qid, radio_q) {
+function add_text_input(qid, radio_q, arr_val) {
 
 	var text_in  = j$("#" + qid).find("input:text");
 	
@@ -147,8 +147,8 @@ function two_col_val(q_obj) {
 
 	add_please(qid);
 
-	add_radio_click(qid);
+	add_radio_click(qid, arr_val);
 
-	add_text_input(qid, radio_q);
+	add_text_input(qid, radio_q, arr_val);
 
 }
