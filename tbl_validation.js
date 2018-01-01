@@ -154,7 +154,7 @@ function tbl_val(q_obj, cols = 2) {
 	var radio_q = that.question.runtime.Children["2"]; 
 	var arr_val = array_init(text_in.length, 0);
 	
-	if(cols === 4) {
+	if(cols == 4) {
 		var qst_a = that.question.runtime.Children[3];
 		var qst_b = that.question.runtime.Children[4];
 		
@@ -177,6 +177,6 @@ function tbl_val(q_obj, cols = 2) {
 
 	add_radio_click(qid, radio_q, arr_val);
 
-	add_text_input(qid, radio_q, arr_val);
+	add_text_input(qid, radio_q, arr_val, cols);
 	
 }
