@@ -60,7 +60,7 @@ function add_radio_click(qid, radio_q, arr_val) {
 	
 }
 
-function add_text_input(qid, radio_q, arr_val, cols) {
+function add_text_input(qid, radio_q, arr_val, cols, qst_a, qst_b) {
 
 	var text_in  = j$("#" + qid).find("input:text");
 	
