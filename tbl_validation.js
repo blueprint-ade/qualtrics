@@ -157,6 +157,8 @@ function tbl_val(q_obj, cols = 2) {
 	if(cols === 4) {
 		var qst_a = that.question.runtime.Children[3];
 		var qst_b = that.question.runtime.Children[4];
+		
+		console.log("qst_a: ", qst_a);
 	}
 
 	if(check_val(qid) == 1) {
