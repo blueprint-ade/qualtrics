@@ -91,7 +91,7 @@ function array_init(len, val) {
 	return Array.apply(null, Array(len)).map(Number.prototype.valueOf,val);
 }
 
-function check_arr(arr_val) {
+function check_arr(arr_val, qid = qid) {
 	
 	var valid = (arr_val.reduce(function(a,b) {return a + b})) == arr_val.length;
 	console.log("validation array: ", arr_val);
