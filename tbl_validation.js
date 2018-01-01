@@ -30,7 +30,7 @@ function add_please(qid) {
 		console.log("please added");
 	}
 
-function add_radio_click(qid, radio_q, arr_val) {
+function add_radio_click(qid, radio_q, arr_val, cols) {
 	
 
 	var text_in   = j$("#" + qid).find("input:text");
@@ -46,10 +46,12 @@ function add_radio_click(qid, radio_q, arr_val) {
 	  console.log(locs);	
 	  console.log(text_in[locs.choice]);
 	  
-	  j$(text_in[locs.choice -1]).val("");
-		
-	  console.log(ind, locs.ans, ind / locs.ans, Math.floor(ind / locs.ans), ind - locs.ans);
-
+	  if(cols == 2) {
+		j$(text_in[locs.choice -1]).val("");
+	  } else {
+		j$(text_in[Math.ceil((ind - locs.ans + 1)/2)]).val("");
+	  }
+	  
 	  arr_val[Math.ceil((ind - locs.ans + 1)/2)] = 1;
 	  console.log(arr_val);
 	  check_arr(arr_val, qid);
