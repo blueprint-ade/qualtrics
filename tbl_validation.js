@@ -52,7 +52,7 @@ function add_radio_click(qid, radio_q, arr_val) {
 
 	  arr_val[Math.ceil((ind - locs.ans + 1)/2)] = 1;
 	  console.log(arr_val);
-	  check_arr(arr_val);
+	  check_arr(arr_val, qid);
 	  
 	}).each(function (idx) {j$(this).data('index', idx)});
 	
@@ -91,7 +91,7 @@ function array_init(len, val) {
 	return Array.apply(null, Array(len)).map(Number.prototype.valueOf,val);
 }
 
-function check_arr(arr_val, qid = qid) {
+function check_arr(arr_val, qid) {
 	
 	var valid = (arr_val.reduce(function(a,b) {return a + b})) == arr_val.length;
 	console.log("validation array: ", arr_val);
