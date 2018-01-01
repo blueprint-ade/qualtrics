@@ -113,7 +113,7 @@ function check_val(qid) {
 
 function four_col_qst(ind, qst_a, qst_b) {
 
-	var qst = ind % 2 === 0?qst_a:qst_b;
+	var qst = ind % 2 === 0?qst_b:qst_a;
 	
 	return qst
 	
