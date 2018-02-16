@@ -72,6 +72,8 @@ function add_text_input(qid, radio_q, arr_val, cols, qst_a, qst_b) {
 	  
 	  if(cols === 4) {
 		var radio_q = four_col_qst(ind, qst_a, qst_b)
+	  } else if(cols === 2{
+		var radio_q = qst_a  
 	  }
 	  
 	  console.log(locs);
