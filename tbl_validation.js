@@ -71,9 +71,9 @@ function add_text_input(qid, radio_q, arr_val, cols, qst_a, qst_b) {
 	  var locs = parse_id(this.id);
 	  
 	  if(cols === 4) {
-		var radio_q = four_col_qst(ind, qst_a, qst_b)
-	  } else if(cols === 2{
-		var radio_q = qst_a  
+		var radio_q = four_col_qst(ind, qst_a, qst_b);
+	  } else if(cols === 2) {
+		var radio_q = qst_a;
 	  }
 	  
 	  console.log(locs);
@@ -166,6 +166,7 @@ function tbl_val(q_obj, cols = 2) {
 	} else if(cols == 2) {
 		
 		var qst_a = that.question.runtime.Children[2];
+		var qst_b = that.question.runtime.Children[2];
 		
 	}
 	
