@@ -160,8 +160,14 @@ function tbl_val(q_obj, cols = 2) {
 		var qst_a = that.question.runtime.Children[3];
 		var qst_b = that.question.runtime.Children[4];
 		
-		console.log("qst_a: ", qst_a);
+		
+	} else if(cols == 2) {
+		
+		var qst_a = that.question.runtime.Children[2];
+		
 	}
+	
+	console.log("qst_a: ", qst_a);
 
 	if(check_val(qid) == 1) {
 		arr_val = array_init(text_in.length, 1);
