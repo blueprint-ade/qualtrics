@@ -1,8 +1,10 @@
 
 var j$ = jQuery.noConflict();
 
-function embed_radio_value(qid, radio_choices, key) {
-		
+function embed_radio_value(q_obj, radio_choices, key) {
+	
+	var qid = q_obj.getQuestionInfo().QuestionID;
+	
 	var radio_in = j$("#" + qid).find("input:radio");
 	
 	radio_in.on("click", function() {
