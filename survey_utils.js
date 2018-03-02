@@ -20,6 +20,24 @@ function embed_radio_value(q_obj, radio_choices, key) {
 
 }
 
+function embed_text_value(q_obj, key) {
+	
+	var qid = q_obj.getQuestionInfo().QuestionID;
+	
+	var text_in  = j$("#" + qid).find("input:text");
+	
+	text_in.on("change paste keyup", function() {
+	   
+		console.log(j$(this).val());
+		q_embed(key, j$(this).val());
+		
+		console.log(q_retrieve(key));
+	
+	})
+
+}
+
+
 function embed_pay_schedule(q_obj, key) {
 	
 	var radio_choices = q_obj.question.runtime.Children[2].Answers;
