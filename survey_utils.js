@@ -22,7 +22,7 @@ function embed_radio_value(q_obj, radio_choices, key) {
 
 function embed_pay_schedule(q_obj, key) {
 	
-	var radio_choices = q_obj.question.runtime.Choices;
+	var radio_choices = q_obj.question.runtime.Children[2].Answers;
 	
 	embed_radio_value(q_obj, radio_choices, key);
 
