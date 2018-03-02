@@ -20,6 +20,16 @@ function embed_radio_value(q_obj, radio_choices, key) {
 
 }
 
+function embed_pay_schedule(q_obj, key) {
+	
+	var radio_choices = q_obj.question.runtime.Choices;
+	
+	embed_radio_value(q_obj, radio_choices, key);
+
+	
+}
+
+
 function q_retrieve(key) {
 	return Qualtrics.SurveyEngine.getEmbeddedData(key);
 }
@@ -27,3 +37,5 @@ function q_retrieve(key) {
 function q_embed(key, val) {
 	Qualtrics.SurveyEngine.setEmbeddedData(key, val);
 }
+
+
