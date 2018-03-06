@@ -71,7 +71,7 @@ function select_all_boolean(q_obj) {
 	
 	check_in.on("mouseleave click toggle", function() {
 		
-		target_array.map(function(x) { q_embed(x[0], x[1] }));
+		target_array.map(function(x) { q_embed(x[0], x[1]) });
 		
 		response_array = target_array.map(function(x) { return q_retrieve(x[0]) })
 		
