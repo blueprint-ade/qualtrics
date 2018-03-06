@@ -57,6 +57,30 @@ function embed_text_exists(q_obj, key) {
 }
 
 
+function select_all_boolean(q_obj) {
+	
+	var qid = q_obj.getQuestionInfo().QuestionID;
+	
+	var check_in  = j$("#" + qid).find(".MultipleAnswer");
+	var choices   = q_obj.question.runtime.Choices;
+	var choice_array = Object.keys(choices).map(i => choices[i]);
+	
+	var target_array = choice_array.map(function(x) {return [x.Display, x.Selected]})
+	
+	
+	
+	check_in.on("mouseleave click toggle", function() {
+		
+		target_array.map(function(x) { q_embed(x[0], x[1] });
+		
+		response_array = target_array.map(function(x) { return q_retrieve(x[0]) })
+		
+		console.log("embedded array", response_array);
+		
+	}) 
+	
+}
+
 
 function embed_pay_schedule(q_obj, key) {
 	
