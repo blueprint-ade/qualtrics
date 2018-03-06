@@ -37,6 +37,26 @@ function embed_text_value(q_obj, key) {
 
 }
 
+function embed_text_exists(q_obj, key) {
+	
+	var qid = q_obj.getQuestionInfo().QuestionID;
+	
+	var text_in  = j$("#" + qid).find("input:text");
+	
+	text_in.on("change paste keyup", function() {
+	   
+		console.log(j$(this).val());
+		
+		if(j$(this).val() != "") {
+			q_embed(key, true);
+		}
+		console.log(q_retrieve(key));
+	
+	})
+
+}
+
+
 
 function embed_pay_schedule(q_obj, key) {
 	
