@@ -69,7 +69,7 @@ function select_all_boolean(q_obj) {
 	
 	
 	
-	check_in.on("mouseleave click toggle", function() {
+	check_in.on("mouseleave click toggle change", function() {
 		
 		target_array = choice_array.map(function(x) {return [x.Display, x.Selected]})
 		
