@@ -37,6 +37,31 @@ function embed_text_value(q_obj, key) {
 
 }
 
+function embed_gender_sf(q_obj, key) {
+	
+	var qid = q_obj.getQuestionInfo().QuestionID;
+	
+	var text_in  = j$("#" + qid).find("input:text");
+	
+	var x = ""
+	
+	text_in.on("change paste keyup", function() {
+	   
+		console.log(j$(this).val());
+		
+		x = j$(this).val();
+		if(x == "Other <em>(please write in)</em>:") {
+			x = "Other";
+		}
+		
+		q_embed(key, j$(this).val());
+		
+		console.log(q_retrieve(key));
+	
+	})
+
+}
+
 function embed_text_exists(q_obj, key) {
 	
 	var qid = q_obj.getQuestionInfo().QuestionID;
@@ -66,7 +91,9 @@ function select_all_boolean(q_obj) {
 	var choice_array = Object.keys(choices).map(i => choices[i]);
 	
 	var target_array = choice_array.map(function(x) {return [x.Display, x.Selected]});
+	target_array.map(function(x) { q_embed(x[0], x[1]) });
 	
+	var response_array = []
 	
 	
 	check_in.on("change", function() {
@@ -81,6 +108,29 @@ function select_all_boolean(q_obj) {
 		console.log("embedded values", response_array);
 		
 	});  
+	
+}
+
+
+function calendar_picker(q_obj) {
+	
+	When did you start this job? <i>If you don't know the exact day, please give your best guess.</i><br><br>
+
+<link href="https://ajax.googleapis.com/ajax/libs/yui/2.9.0/build/calendar/assets/skins/sam/calendar.css" rel="stylesheet" type="text/css"/><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/yui/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/yui/2.9.0/build/calendar/calendar-min.js"></script> <script>Qualtrics.SurveyEngine.addOnload(function(){var qid =this.questionId;var calid = qid +'_cal';var y =QBuilder('div');
+  $(y).setStyle({clear:'both'});var d =QBuilder('div',{className:'yui-skin-sam'},[QBuilder('div',{id:calid}),
+    y
+  ]);var c =this.questionContainer;
+  c = $(c).down('.QuestionText');
+  c.appendChild(d);var cal1 =new YAHOO.widget.Calendar(calid); 
+  cal1.render();var input = $('QR~'+ qid);
+  $(input).setStyle({marginTop:'20px',width:'150px'});var p =$(input).up();var x =QBuilder('div');
+  $(x).setStyle({clear:'both'});
+  p.insert(x,{position:'before'});
+    cal1.selectEvent.subscribe(function(e,dates){var date = dates[0][0];if(date[1]<10)
+        date[1]='0'+ date[1];if(date[2]<10)
+        date[2]='0'+ date[2];
+  
+    input.value = date[2]+'/'+date[1]+'/'+date[0];})});</script>
 	
 }
 
