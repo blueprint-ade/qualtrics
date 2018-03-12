@@ -42,13 +42,12 @@ function embed_gender_sf(q_obj, key) {
 	var qid = q_obj.getQuestionInfo().QuestionID;
 	
 	var radio_in  = j$("#" + qid).find("input:radio");
-	var radio_choices = this.question.runtime.Answers;
+	var radio_choices =q_obj.question.runtime.Choices;
 	
 	var x = ""
 	
 	radio_in.on("click", function() {
 	   
-		console.log(j$(this).val());
 		
 		x = radio_choices[this.value].Display;
 		if(x == "Other <em>(please write in)</em>:") {
