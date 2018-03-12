@@ -41,11 +41,11 @@ function embed_gender_sf(q_obj, key) {
 	
 	var qid = q_obj.getQuestionInfo().QuestionID;
 	
-	var text_in  = j$("#" + qid).find("input:text");
+	var radio_in  = j$("#" + qid).find("input:radio");
 	
 	var x = ""
 	
-	text_in.on("change paste keyup", function() {
+	radio_in.on("click", function() {
 	   
 		console.log(j$(this).val());
 		
@@ -54,7 +54,7 @@ function embed_gender_sf(q_obj, key) {
 			x = "Other";
 		}
 		
-		q_embed(key, j$(this).val());
+		q_embed(key, x);
 		
 		console.log(q_retrieve(key));
 	
