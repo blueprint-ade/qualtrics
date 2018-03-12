@@ -45,7 +45,7 @@ function embed_radio_value(q_obj, radio_choices, key) {
 		
 		console.log(this);
 		
-		x = radio_choices[this.value].Display;
+		x = \" + radio_choices[this.value].Display + \";
 		q_embed(key, x); 
 		
 		console.log(q_retrieve(key));
