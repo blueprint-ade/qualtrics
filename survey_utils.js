@@ -33,7 +33,7 @@ function embed_text_value(q_obj, key) {
 		
 		console.log(q_retrieve(key));
 	
-	})
+	});
 
 }
 
