@@ -180,7 +180,14 @@ function zero_job(q_obj, job_num) {
 	
 }
 
-function radios(qid) {
+function get_qid(q_obj) {
+	
+	return q_obj.getQuestionInfo().QuestionID;	
+}
+
+function radios(q_obj) {
+	
+	var qid = get_qid(q_obj);
 	
 	return jQuery("#" + qid).find("input:radio");
 	
