@@ -3,40 +3,6 @@ var j$ = jQuery.noConflict();
 
 
 
-function calendar_picker(q_obj) { 
-  var qid   = q_obj.getQuestionInfo.QuestionID;
-  var calid = qid +'_cal';
-  var y     = QBuilder('div');
-  $(y).setStyle({clear:'both'});
-  
-  var d =QBuilder('div', 
-	{className:'yui-skin-sam'},
-	[QBuilder('div',{id:calid}), y]);
-	
-  var c = q_obj.questionContainer;
-  c = $(c).down('.QuestionText');
-  
-  c.appendChild(d);
-  
-  var cal1 =new YAHOO.widget.Calendar(calid); 
-  cal1.render();
-  var input = $('QR~'+ qid);
-  
-  $(input).setStyle({marginTop:'20px',width:'150px'});
-  var p = $(input).up();
-  var x = QBuilder('div');
-  
-  $(x).setStyle({clear:'both'});
-  p.insert(x,{position:'before'});
-    cal1.selectEvent.subscribe(function(e,dates){
-		var date = dates[0][0];
-		if(date[1]<10) date[1]='0'+ date[1];
-		if(date[2]<10) date[2]='0'+ date[2];
-    input.value = date[0]+'-'+date[1]+'-'+date[2];
-  })
-}
-
-
 function embed_radio_value(q_obj, radio_choices, key) {
 	
 	var qid = q_obj.getQuestionInfo().QuestionID;
