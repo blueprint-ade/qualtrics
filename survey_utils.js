@@ -1,6 +1,8 @@
 
 var j$ = jQuery.noConflict();
 
+
+
 function calendar_picker(q_obj) { 
   var qid   = q_obj.getQuestionInfo.QuestionID;
   var calid = qid +'_cal';
@@ -164,4 +166,60 @@ function q_embed(key, val) {
 	Qualtrics.SurveyEngine.setEmbeddedData(key, val);
 }
 
+function count_jobs(q_obj) {
 
+	var radio_in = radios(q_obj);
+	var num_jobs = 0;
+	radio_in.on("click", function() {
+		
+		q_embed("num_jobs", this.value);
+		
+	});
+	
+}
+
+
+function zero_job(q_obj, job_num) {
+
+	var qid = q_obj.getQuestionInfo().QuestionID;
+	var keys = ["JobStart" + job_num, "JobTitle" + job_num, "num_jobs"];
+	var num_jobs = q_retrieve("num_jobs")
+	
+	var job = {
+		start : q_retrieve(keys[0]),
+		title : q_retrieve(keys[1])
+	}
+	var x, s, t = "";
+	
+	var radio_in = jQuery("#" + qid).find("input:radio");
+	var radio_choices = q_obj.question.runtime.Choices;
+	
+	console.log(q_obj.question.runtime);
+	
+	radio_in.on("click", function() {
+		
+		x = radio_choices[this.value].Display;
+		
+		s = x == "No"?"":job.start;
+		t = x == "No"?"":job.title;
+		n = x == "Yes"?num_jobs : num_jobs - 1;
+		q_embed(keys[0], s);
+		q_embed(keys[1], t);
+		q_embed(keys[2], n);
+		
+		console.log(keys.map(q_retrieve));
+
+		
+	});
+	
+}
+
+function radios(qid) {
+	
+	return jQuery("#" + qid).find("input:radio");
+	
+}
+
+function decrement_numjobs() {q_embed("num_jobs", Math.max(q_retrieve("num_jobs") - 1, 0))}
+
+function increment_fun() {q_embed("FollowUp", +q_retrieve("FollowUp")  + 1)}
