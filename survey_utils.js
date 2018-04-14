@@ -203,7 +203,7 @@ function increment_fun() {
 	
 	var x = q_retrieve("FollowUp");
 	console.log("follow-up", x);
-	conaole.log("next", +x + 1);
+	console.log("next", +x + 1);
 	if(typeof x === 'undefined') {
 		x = 0
 	}
