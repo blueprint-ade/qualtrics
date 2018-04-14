@@ -193,6 +193,18 @@ function radios(q_obj) {
 	
 }
 
-function decrement_numjobs() {q_embed("num_jobs", Math.max(q_retrieve("num_jobs") - 1, 0))}
+function decrement_numjobs() {
 
-function increment_fun() {q_embed("FollowUp", +q_retrieve("FollowUp")  + 1)}
+	q_embed("num_jobs", Math.max(q_retrieve("num_jobs") - 1, 0));
+
+}
+
+function increment_fun() {
+	
+	var x = q_retrieve("FollowUp");
+	console.log("follow-up", x);
+	conaole.log("next", +x + 1);
+	
+	q_embed("FollowUp", +x  + 1);
+
+}
