@@ -209,5 +209,6 @@ function increment_fun() {
 	}
 	
 	q_embed("FollowUp", +x  + 1);
+	console.log("real", +x + 1);
 
 }
