@@ -164,6 +164,8 @@ function zero_job(q_obj, job_num) {
 	
 	radio_in.on("click", function() {
 		
+		console.log(keys.map(q_retrieve));
+		
 		x = radio_choices[this.value].Display;
 		
 		s = x == "No"?"":job.start;
