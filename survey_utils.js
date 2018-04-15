@@ -202,6 +202,7 @@ function decrement_numjobs() {
 function increment_fun() {
 	
 	var x = q_retrieve("FollowUp");
+	var real = "";
 	console.log("follow-up", x);
 	console.log("next", +x + 1);
 	if(typeof x === 'undefined') {
@@ -209,6 +210,8 @@ function increment_fun() {
 	}
 	
 	q_embed("FollowUp", +x  + 1);
-	console.log("real", +x + 1);
+	real = q_retrieve("FollowUp");
+	
+	console.log("real", real);
 
 }
