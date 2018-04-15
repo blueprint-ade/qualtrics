@@ -195,8 +195,11 @@ function radios(q_obj) {
 
 function decrement_numjobs() {
 
+	console.log("num_jobs", q_retrieve("num_jobs"))
+	
 	q_embed("num_jobs", Math.max(q_retrieve("num_jobs") - 1, 0));
 
+	console.log("num_jobs", q_retrieve("num_jobs"))
 }
 
 function increment_fun() {
