@@ -170,7 +170,7 @@ function zero_job(q_obj, job_num) {
 		
 		s = x == "No"?"":job.start;
 		t = x == "No"?"":job.title;
-		n = x == "Yes"?num_jobs : num_jobs - 1;
+		n = x == "Yes"? num_jobs - 1 : num_jobs;
 		q_embed(keys[0], s);
 		q_embed(keys[1], t);
 		q_embed(keys[2], n);
